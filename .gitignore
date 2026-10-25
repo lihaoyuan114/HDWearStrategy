@@ -28,3 +28,8 @@
 
 /.m2/
 /.run/
+
+# Release artifacts are published on GitHub Releases
+/dist/*.apk
+/dist/*.idsig
+/server/dist/
