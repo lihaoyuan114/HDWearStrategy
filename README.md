@@ -20,9 +20,9 @@
 | 🇬🇧 English | `com.deepsea.stratagemhero.en` | 2,574,107 B |
 
 - 中文：[StratagemHero-Watch4-v1.6.0-zh.apk](dist/StratagemHero-Watch4-v1.6.0-zh.apk)  
-  `SHA-256 c3e2ad3392e226e72607c37e34db91117585111eb5d3b8bc24653fcd9c1c00a9`
+  `SHA-256 7446a5e2e6642988eb274879926cc732d6fb97da2d3c7a19330692841fd59963`
 - English：[StratagemHero-Watch4-v1.6.0-en.apk](dist/StratagemHero-Watch4-v1.6.0-en.apk)  
-  `SHA-256 70e77b11d85a82d672c255affc79f8292c1361c814b62fcf383ce26334344b79`
+  `SHA-256 27c876210d723f755f9c63eec7ee523821c6aa989325e5bdb6245ad35f419f51`
 - 键盘服务端（Windows + Linux）：[stratagem-server-v1.0.0.zip](server/dist/stratagem-server-v1.0.0.zip)  
   `SHA-256 07a62628dc075571bfa6de7e52dd992100ed8acb52a613971650eea4a3612600`
 

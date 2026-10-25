@@ -824,8 +824,8 @@ public final class GameView extends View {
 
         text(c, L10n.t("战备呼叫确认"), CX, 78f, 25f, C_CREAM, bodyMedium,
                 Paint.Align.CENTER, 0.08f);
-        text(c, "CALL-IN CONFIRMED", CX, 96f, 10f, accent, display,
-                Paint.Align.CENTER, 0.2f);
+        text(c, L10n.en ? "DEPLOYMENT AUTHORIZED" : "CALL-IN CONFIRMED",
+                CX, 96f, 10f, accent, display, Paint.Align.CENTER, 0.2f);
 
         float ring = 58f + 7f * (float) Math.sin(t * Math.PI * 2f);
         linePaint.setStyle(Paint.Style.STROKE);
