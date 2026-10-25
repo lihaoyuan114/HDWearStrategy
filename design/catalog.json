@@ -1,0 +1,362 @@
+[
+  {
+    "id": "reinforce",
+    "name": "Reinforce",
+    "nameZh": "增援",
+    "category": "MISSION",
+    "code": "UDRLU",
+    "remoteIcon": "Reinforce.png"
+  },
+  {
+    "id": "resupply",
+    "name": "Resupply",
+    "nameZh": "补给",
+    "category": "MISSION",
+    "code": "DDUR",
+    "remoteIcon": "Resupply.png"
+  },
+  {
+    "id": "sos_beacon",
+    "name": "SOS Beacon",
+    "nameZh": "SOS 信标",
+    "category": "MISSION",
+    "code": "UDRU",
+    "remoteIcon": "SOS Beacon.png"
+  },
+  {
+    "id": "machine_gun",
+    "name": "MG-43 Machine Gun",
+    "nameZh": "MG-43 机枪",
+    "category": "SUPPORT",
+    "code": "DLDUR",
+    "remoteIcon": "Machine Gun.png"
+  },
+  {
+    "id": "amr",
+    "name": "APW-1 Anti-Materiel Rifle",
+    "nameZh": "APW-1 反器材步枪",
+    "category": "SUPPORT",
+    "code": "DLRUD",
+    "remoteIcon": "Anti-Materiel Rifle.png"
+  },
+  {
+    "id": "stalwart",
+    "name": "M-105 Stalwart",
+    "nameZh": "M-105 坚定者",
+    "category": "SUPPORT",
+    "code": "DLDUUL",
+    "remoteIcon": "Stalwart.png"
+  },
+  {
+    "id": "eat",
+    "name": "EAT-17 Expendable Anti-Tank",
+    "nameZh": "EAT-17 一次性反坦克武器",
+    "category": "SUPPORT",
+    "code": "DDLUR",
+    "remoteIcon": "Expendable Anti-Tank.png"
+  },
+  {
+    "id": "recoilless",
+    "name": "GR-8 Recoilless Rifle",
+    "nameZh": "GR-8 无后坐力炮",
+    "category": "SUPPORT",
+    "code": "DLRRL",
+    "remoteIcon": "Recoilless Rifle.png"
+  },
+  {
+    "id": "flamethrower",
+    "name": "FLAM-40 Flamethrower",
+    "nameZh": "FLAM-40 火焰喷射器",
+    "category": "SUPPORT",
+    "code": "DLUDU",
+    "remoteIcon": "Flamethrower.png"
+  },
+  {
+    "id": "autocannon",
+    "name": "AC-8 Autocannon",
+    "nameZh": "AC-8 自动加农炮",
+    "category": "SUPPORT",
+    "code": "DLDUUR",
+    "remoteIcon": "Autocannon.png"
+  },
+  {
+    "id": "hmg",
+    "name": "MG-206 Heavy Machine Gun",
+    "nameZh": "MG-206 重机枪",
+    "category": "SUPPORT",
+    "code": "DLUDD",
+    "remoteIcon": "Heavy Machine Gun.png"
+  },
+  {
+    "id": "railgun",
+    "name": "RS-422 Railgun",
+    "nameZh": "RS-422 磁轨炮",
+    "category": "SUPPORT",
+    "code": "DRDULR",
+    "remoteIcon": "Railgun.png"
+  },
+  {
+    "id": "spear",
+    "name": "FAF-14 Spear",
+    "nameZh": "FAF-14 长矛导弹",
+    "category": "SUPPORT",
+    "code": "DDUDD",
+    "remoteIcon": "Spear.png"
+  },
+  {
+    "id": "commando",
+    "name": "MLS-4X Commando",
+    "nameZh": "MLS-4X 突击兵",
+    "category": "SUPPORT",
+    "code": "DLUDR",
+    "remoteIcon": "Commando.png"
+  },
+  {
+    "id": "airburst_rocket",
+    "name": "RL-77 Airburst Rocket Launcher",
+    "nameZh": "RL-77 空爆火箭发射器",
+    "category": "SUPPORT",
+    "code": "DUULR",
+    "remoteIcon": "Airburst Rocket Launcher.png"
+  },
+  {
+    "id": "eagle_500",
+    "name": "Eagle 500kg Bomb",
+    "nameZh": "飞鹰 500kg 炸弹",
+    "category": "OFFENSIVE",
+    "code": "URDDD",
+    "remoteIcon": "Eagle 500KG Bomb.png"
+  },
+  {
+    "id": "eagle_airstrike",
+    "name": "Eagle Airstrike",
+    "nameZh": "飞鹰空袭",
+    "category": "OFFENSIVE",
+    "code": "URDR",
+    "remoteIcon": "Eagle Airstrike.png"
+  },
+  {
+    "id": "eagle_cluster",
+    "name": "Eagle Cluster Bomb",
+    "nameZh": "飞鹰集束炸弹",
+    "category": "OFFENSIVE",
+    "code": "URDDR",
+    "remoteIcon": "Eagle Cluster Bomb.png"
+  },
+  {
+    "id": "eagle_napalm",
+    "name": "Eagle Napalm Airstrike",
+    "nameZh": "飞鹰凝固汽油弹空袭",
+    "category": "OFFENSIVE",
+    "code": "URDU",
+    "remoteIcon": "Eagle Napalm Airstrike.png"
+  },
+  {
+    "id": "eagle_smoke",
+    "name": "Eagle Smoke Strike",
+    "nameZh": "飞鹰烟雾攻击",
+    "category": "OFFENSIVE",
+    "code": "URUD",
+    "remoteIcon": "Eagle Smoke Strike.png"
+  },
+  {
+    "id": "eagle_110",
+    "name": "Eagle 110mm Rocket Pods",
+    "nameZh": "飞鹰 110mm 火箭巢",
+    "category": "OFFENSIVE",
+    "code": "URUL",
+    "remoteIcon": "Eagle 110MM Rocket Pods.png"
+  },
+  {
+    "id": "eagle_strafing",
+    "name": "Eagle Strafing Run",
+    "nameZh": "飞鹰机枪扫射",
+    "category": "OFFENSIVE",
+    "code": "URR",
+    "remoteIcon": "Eagle Strafing Run.png"
+  },
+  {
+    "id": "orbital_gatling",
+    "name": "Orbital Gatling Barrage",
+    "nameZh": "轨道加特林火力网",
+    "category": "OFFENSIVE",
+    "code": "RDLUU",
+    "remoteIcon": "Orbital Gatling Barrage.png"
+  },
+  {
+    "id": "orbital_airburst",
+    "name": "Orbital Airburst Strike",
+    "nameZh": "轨道空爆攻击",
+    "category": "OFFENSIVE",
+    "code": "RRR",
+    "remoteIcon": "Orbital Airburst Strike.png"
+  },
+  {
+    "id": "orbital_120",
+    "name": "Orbital 120mm HE Barrage",
+    "nameZh": "轨道 120mm 高爆火力网",
+    "category": "OFFENSIVE",
+    "code": "RRDLRD",
+    "remoteIcon": "Orbital 120MM HE Barrage.png"
+  },
+  {
+    "id": "orbital_380",
+    "name": "Orbital 380mm HE Barrage",
+    "nameZh": "轨道 380mm 高爆火力网",
+    "category": "OFFENSIVE",
+    "code": "RDUULDD",
+    "remoteIcon": "Orbital 380MM HE Barrage.png"
+  },
+  {
+    "id": "orbital_walking",
+    "name": "Orbital Walking Barrage",
+    "nameZh": "轨道游走火力网",
+    "category": "OFFENSIVE",
+    "code": "RDRDRD",
+    "remoteIcon": "Orbital Walking Barrage.png"
+  },
+  {
+    "id": "orbital_laser",
+    "name": "Orbital Laser",
+    "nameZh": "轨道激光",
+    "category": "OFFENSIVE",
+    "code": "RDURD",
+    "remoteIcon": "Orbital Laser.png"
+  },
+  {
+    "id": "orbital_railcannon",
+    "name": "Orbital Railcannon Strike",
+    "nameZh": "轨道磁轨炮攻击",
+    "category": "OFFENSIVE",
+    "code": "RUDDR",
+    "remoteIcon": "Orbital Railcannon Strike.png"
+  },
+  {
+    "id": "orbital_napalm",
+    "name": "Orbital Napalm Barrage",
+    "nameZh": "轨道凝固汽油弹火力网",
+    "category": "OFFENSIVE",
+    "code": "RRDLRU",
+    "remoteIcon": "Orbital Napalm Barrage.png"
+  },
+  {
+    "id": "jump_pack",
+    "name": "LIFT-850 Jump Pack",
+    "nameZh": "LIFT-850 跳跃背包",
+    "category": "BACKPACK",
+    "code": "DUUDU",
+    "remoteIcon": "Jump Pack.png"
+  },
+  {
+    "id": "supply_pack",
+    "name": "B-1 Supply Pack",
+    "nameZh": "B-1 补给背包",
+    "category": "BACKPACK",
+    "code": "DLDUUD",
+    "remoteIcon": "Supply Pack.png"
+  },
+  {
+    "id": "shield_pack",
+    "name": "SH-32 Shield Generator Pack",
+    "nameZh": "SH-32 护盾生成器背包",
+    "category": "BACKPACK",
+    "code": "DULRLR",
+    "remoteIcon": "Shield Generator Pack.png"
+  },
+  {
+    "id": "guard_dog",
+    "name": "AX/AR-23 Guard Dog",
+    "nameZh": "AX/AR-23 护卫犬",
+    "category": "BACKPACK",
+    "code": "DULURD",
+    "remoteIcon": "Guard Dog.png"
+  },
+  {
+    "id": "guard_dog_rover",
+    "name": "AX/LAS-5 Guard Dog Rover",
+    "nameZh": "AX/LAS-5 护卫犬漫游者",
+    "category": "BACKPACK",
+    "code": "DULURR",
+    "remoteIcon": "Guard Dog Rover.png"
+  },
+  {
+    "id": "ballistic_shield",
+    "name": "SH-20 Ballistic Shield Backpack",
+    "nameZh": "SH-20 防弹盾背包",
+    "category": "BACKPACK",
+    "code": "DLDDUL",
+    "remoteIcon": "Ballistic Shield Backpack.png"
+  },
+  {
+    "id": "mg_sentry",
+    "name": "A/MG-43 Machine Gun Sentry",
+    "nameZh": "A/MG-43 机枪哨戒炮",
+    "category": "SENTRY",
+    "code": "DURRU",
+    "remoteIcon": "Machine Gun Sentry.png"
+  },
+  {
+    "id": "gatling_sentry",
+    "name": "A/G-16 Gatling Sentry",
+    "nameZh": "A/G-16 加特林哨戒炮",
+    "category": "SENTRY",
+    "code": "DURL",
+    "remoteIcon": "Gatling Sentry.png"
+  },
+  {
+    "id": "mortar_sentry",
+    "name": "A/M-12 Mortar Sentry",
+    "nameZh": "A/M-12 迫击炮哨戒炮",
+    "category": "SENTRY",
+    "code": "DURRD",
+    "remoteIcon": "Mortar Sentry.png"
+  },
+  {
+    "id": "ac_sentry",
+    "name": "A/AC-8 Autocannon Sentry",
+    "nameZh": "A/AC-8 自动加农炮哨戒炮",
+    "category": "SENTRY",
+    "code": "DURULU",
+    "remoteIcon": "Autocannon Sentry.png"
+  },
+  {
+    "id": "rocket_sentry",
+    "name": "A/MLS-4X Rocket Sentry",
+    "nameZh": "A/MLS-4X 火箭哨戒炮",
+    "category": "SENTRY",
+    "code": "DURRL",
+    "remoteIcon": "Rocket Sentry.png"
+  },
+  {
+    "id": "ems_mortar",
+    "name": "A/M-23 EMS Mortar Sentry",
+    "nameZh": "A/M-23 EMS 迫击炮哨戒炮",
+    "category": "SENTRY",
+    "code": "DURDR",
+    "remoteIcon": "EMS Mortar Sentry.png"
+  },
+  {
+    "id": "hmg_emplacement",
+    "name": "E/MG-101 HMG Emplacement",
+    "nameZh": "E/MG-101 重机枪阵地",
+    "category": "DEFENSIVE",
+    "code": "DULRRL",
+    "remoteIcon": "HMG Emplacement.png"
+  },
+  {
+    "id": "shield_relay",
+    "name": "FX-12 Shield Generator Relay",
+    "nameZh": "FX-12 护盾生成器中继",
+    "category": "DEFENSIVE",
+    "code": "DDLRLR",
+    "remoteIcon": "Shield Generator Relay.png"
+  },
+  {
+    "id": "tesla_tower",
+    "name": "A/ARC-3 Tesla Tower",
+    "nameZh": "A/ARC-3 特斯拉塔",
+    "category": "DEFENSIVE",
+    "code": "DURULR",
+    "remoteIcon": "Tesla Tower.png"
+  }
+]

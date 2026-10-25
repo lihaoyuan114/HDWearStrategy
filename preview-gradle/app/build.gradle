@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.deepsea.stratagemhero'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.deepsea.stratagemhero'
+        minSdk 26
+        targetSdk 34
+        versionCode 8
+        versionName '1.6.0'
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile '../../app/AndroidManifest.xml'
+            java.srcDirs = ['../../app/src']
+            res.srcDirs = ['../../app/res']
+            assets.srcDirs = ['../../app/assets']
+        }
+        test {
+            java.srcDirs = ['src/test/java']
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+            all {
+                systemProperty 'preview.out', "${rootDir}/../preview/render"
+                systemProperty 'user.home', "${rootDir}/../.home"
+                systemProperty 'java.io.tmpdir', "${rootDir}/../.tmp"
+                maxHeapSize = '2g'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.13'
+    testImplementation 'androidx.test:core:1.5.0'
+}

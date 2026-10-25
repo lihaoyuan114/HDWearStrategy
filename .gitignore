@@ -1,0 +1,30 @@
+# Toolchains / SDKs (not part of the project)
+/sdk/
+/jdk17/
+/gradle/
+/maven/
+/tools_dl/
+/assets_src/
+/keystore/
+
+# Build outputs
+/build/
+/build-*/
+/preview-gradle/.gradle/
+/preview-gradle/app/build/
+/preview-gradle/build/
+/preview-gradle/local.properties
+/.gradle_home/
+/.gocache/
+/.gopath/
+/.home/
+/.tmp/
+/.android/
+
+*.log
+*.idsig
+*.iml
+.idea/
+
+/.m2/
+/.run/

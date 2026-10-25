@@ -1,0 +1,13 @@
+{
+  "udp_port": 45891,
+  "tcp_port": 45892,
+  "auto_pair": false,
+  "key_hold_ms": 18,
+  "bindings": {
+    "up": "W",
+    "down": "S",
+    "left": "A",
+    "right": "D",
+    "menu": "LEFTCTRL"
+  }
+}
