@@ -2,7 +2,7 @@
 
 [![Wear OS](https://img.shields.io/badge/Wear%20OS-3%2B-3DDC84?logo=wearos&logoColor=white)](https://www.google.com/search?q=Wear+OS)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://developer.android.com)
-[![Release](https://img.shields.io/badge/release-v1.6.0-FFD24A)](https://github.com/lihaoyuan114/HDWearStrategy/releases/tag/v1.6.0)
+[![Release](https://img.shields.io/badge/release-v1.6.1-FFD24A)](https://github.com/lihaoyuan114/HDWearStrategy/releases/tag/v1.6.1)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 **中文** · [English](README.en.md)
@@ -16,19 +16,19 @@
 
 所有 APK 与服务端压缩包放在 GitHub Release：
 
-**[v1.6.0 Release](https://github.com/lihaoyuan114/HDWearStrategy/releases/tag/v1.6.0)**
+**[v1.6.1 Release](https://github.com/lihaoyuan114/HDWearStrategy/releases/tag/v1.6.1)**
 
 | 文件 | 包名 | 大小 |
 |---|---|---|
-| [中文 APK](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.0/StratagemHero-Watch4-v1.6.0-zh.apk) | `com.deepsea.stratagemhero` | 2,574,107 B |
-| [English APK](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.0/StratagemHero-Watch4-v1.6.0-en.apk) | `com.deepsea.stratagemhero.en` | 2,574,107 B |
-| [键盘服务端 ZIP](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.0/stratagem-server-v1.0.0.zip) | Windows + Linux | 2.5 MB |
+| [中文 APK](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.1/StratagemHero-Watch4-v1.6.1-zh.apk) | `com.deepsea.stratagemhero` | 2,574,107 B |
+| [English APK](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.1/StratagemHero-Watch4-v1.6.1-en.apk) | `com.deepsea.stratagemhero.en` | 2,574,107 B |
+| [键盘服务端 ZIP](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.1/stratagem-server-v1.0.0.zip) | Windows + Linux | 2.5 MB |
 
-两个 APK 包名不同，可同时安装。版本 `1.6.0` / `versionCode 8`。
+两个 APK 包名不同，可同时安装。版本 `1.6.1` / `versionCode 9`。
 
 ```
-中文 APK   SHA-256 7446a5e2e6642988eb274879926cc732d6fb97da2d3c7a19330692841fd59963
-English    SHA-256 27c876210d723f755f9c63eec7ee523821c6aa989325e5bdb6245ad35f419f51
+中文 APK   SHA-256 7ea0c3403071d597615a42f69016fe1d253a6b91430f4d6df12b83f492ebe055
+English    SHA-256 d05171b0811f6256a23edfb82185b768db49d84b4e8d2ca1a552fabcab2a90d3
 Server ZIP SHA-256 07a62628dc075571bfa6de7e52dd992100ed8acb52a613971650eea4a3612600
 ```
 
@@ -94,12 +94,13 @@ Server ZIP SHA-256 07a62628dc075571bfa6de7e52dd992100ed8acb52a613971650eea4a3612
 - 半透明方向残影约 14px / 0.45s 淡出。
 - 圆屏点击用外圈弧键；方屏点击用四边条键；滑动模式不显示假按钮。
 - 左右阈值约 16px，垂直约 24px，系统取消触摸时按位移补偿。
+- **右滑兼容**：API 29/30 只使用左右各 98dp 的手势排除区（避免超过 200dp 限制导致整组失效）；API 31+ 使用全屏排除区；即使系统把滑动识别成返回，也会用 `ACTION_CANCEL` / Back 回调补偿方向。
 
 ---
 
 ## 键盘服务端
 
-下载 [stratagem-server-v1.0.0.zip](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.0/stratagem-server-v1.0.0.zip)，或查看 [服务端说明](server/README.md)。
+下载 [stratagem-server-v1.0.0.zip](https://github.com/lihaoyuan114/HDWearStrategy/releases/download/v1.6.1/stratagem-server-v1.0.0.zip)，或查看 [服务端说明](server/README.md)。
 
 - Windows：`stratagem-server-windows-amd64.exe`
 - Linux：`stratagem-server-linux-amd64`（uinput，需要 root/udev 权限）
@@ -115,8 +116,8 @@ Server ZIP SHA-256 07a62628dc075571bfa6de7e52dd992100ed8acb52a613971650eea4a3612
 下载 APK 后：
 
 ```bash
-adb install -r StratagemHero-Watch4-v1.6.0-zh.apk
-adb install -r StratagemHero-Watch4-v1.6.0-en.apk
+adb install -r StratagemHero-Watch4-v1.6.1-zh.apk
+adb install -r StratagemHero-Watch4-v1.6.1-en.apk
 ```
 
 ```bash
@@ -140,7 +141,7 @@ adb shell am start -n com.deepsea.stratagemhero.en/com.deepsea.stratagemhero.Mai
 - 纯逻辑测试：`# PASS: 710 checks`
 - Robolectric：450 圆屏、396 圆屏、450 方屏、396 方屏、英文 UI、五段菜单。
 - 实机 v1.5.0（SM-R890 / Android 14）：配对码、LINKED、CTRL 按下/抬起、方向 → D / ↓ → S、服务端 dry-run 已验证。
-- v1.6.0 双语/方屏包已完成构建与渲染回归；实机在 v1.5.0 测试后离线，未覆盖安装 v1.6.0。
+- v1.6.1 双语/方屏包已完成构建与渲染回归；实机在 v1.5.0 测试后离线，未覆盖安装 v1.6.1。
 - 服务端 Windows/Linux 已交叉编译；实际注入需要 Windows 前台/管理员或 Linux `/dev/uinput` 权限。
 
 ---

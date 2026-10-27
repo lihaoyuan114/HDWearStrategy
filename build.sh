@@ -7,8 +7,8 @@ BT="$SDK/build-tools/34.0.0"
 PLATFORM="$SDK/platforms/android-34/android.jar"
 DIST="$ROOT/dist"
 JDK="$ROOT/jdk17"
-VERSION_CODE=8
-VERSION_NAME=1.6.0
+VERSION_CODE=9
+VERSION_NAME=1.6.1
 
 if [[ ! -x "$BT/aapt2" || ! -f "$PLATFORM" || ! -x "$JDK/bin/javac" ]]; then
   echo "Android SDK 34 not found. Set ANDROID_SDK_ROOT or run the SDK setup first." >&2

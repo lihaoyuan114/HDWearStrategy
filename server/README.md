@@ -4,7 +4,7 @@
 「键盘」模式共用同一个 APK；只有「键盘」模式会连接电脑。
 
 下载 Windows + Linux 服务端：
-[GitHub Release v1.6.0](https://github.com/lihaoyuan114/HDWearStrategy/releases/tag/v1.6.0) 的
+[GitHub Release v1.6.1](https://github.com/lihaoyuan114/HDWearStrategy/releases/tag/v1.6.1) 的
 `stratagem-server-v1.0.0.zip`，解压后运行对应平台的可执行文件。
 
 ## 1. 启动服务端

@@ -183,6 +183,9 @@ public final class GameView extends View {
 
     private boolean swipeTracking;
     private boolean swipeConsumed;
+    private boolean systemSwipeCanceled;
+    private float systemCancelDx;
+    private float systemCancelDy;
     private float swipeStartX;
     private float swipeStartY;
     private float trailStartX;
@@ -293,16 +296,24 @@ public final class GameView extends View {
         int w = getWidth();
         int h = getHeight();
         if (w <= 0 || h <= 0) return;
-        float density = getResources().getDisplayMetrics().density;
-        int edge = Math.min((int) (90f * density), w / 2);
-        List<Rect> rects = new ArrayList<>(3);
-        rects.add(new Rect(0, 0, edge, h));
-        rects.add(new Rect(w - edge, 0, w, h));
-        // During a run, also exclude the middle: Wear OS can claim horizontal
-        // swipes as its own back gesture even when they begin away from an edge.
-        if (screen == Screen.PLAYING || screen == Screen.COUNTDOWN
-                || screen == Screen.REMOTE) {
-            rects.add(new Rect(4, 4, w - 4, h - 4));
+
+        boolean gameplay = screen == Screen.PLAYING || screen == Screen.COUNTDOWN
+                || screen == Screen.REMOTE;
+        List<Rect> rects = new ArrayList<>(2);
+        if (gameplay) {
+            if (Build.VERSION.SDK_INT >= 31) {
+                // Newer gesture navigation: ask for the whole panel. The system may
+                // clamp this, so the Back-cancel fallback below is still required.
+                int inset = Math.max(8, (int) (6f * getResources().getDisplayMetrics().density));
+                rects.add(new Rect(inset, inset, w - inset, h - inset));
+            } else {
+                // API 29/30 enforces a 200dp total exclusion budget. Two ~98dp
+                // edge bands fit; adding a full-screen rect makes the whole list
+                // invalid on some Wear OS builds.
+                int edge = Math.min((int) (98f * getResources().getDisplayMetrics().density), w / 2);
+                rects.add(new Rect(0, 0, edge, h));
+                rects.add(new Rect(w - edge, 0, w, h));
+            }
         }
         setSystemGestureExclusionRects(rects);
     }
@@ -1849,6 +1860,9 @@ public final class GameView extends View {
 
     private void resetSwipe() {
         swipeTracking = false;
+        systemSwipeCanceled = false;
+        systemCancelDx = 0f;
+        systemCancelDy = 0f;
         swipeConsumed = false;
         trailVisible = false;
         trailStartX = trailStartY = trailEndX = trailEndY = 0f;
@@ -1982,6 +1996,9 @@ public final class GameView extends View {
                 downX = x;
                 downY = y;
                 activeButton = "";
+                systemSwipeCanceled = false;
+                systemCancelDx = 0f;
+                systemCancelDy = 0f;
                 if (screen == Screen.MENU) {
                     if (R_MENU_MODE.contains(x, y)) {
                         activeButton = modeButtonAt(x, y, R_MENU_MODE);
@@ -2118,7 +2135,12 @@ public final class GameView extends View {
 
             case MotionEvent.ACTION_CANCEL:
                 if ((screen == Screen.PLAYING || screen == Screen.REMOTE) && swipeMode) {
-                    feedSwipeFallback(x, y);
+                    boolean fed = feedSwipeFallback(x, y);
+                    if (!fed && !swipeConsumed && swipeTracking) {
+                        systemSwipeCanceled = true;
+                        systemCancelDx = x - swipeStartX;
+                        systemCancelDy = y - swipeStartY;
+                    }
                 }
                 activeButton = "";
                 pressedDir = null;
@@ -2247,8 +2269,8 @@ public final class GameView extends View {
         }
     }
 
-    private void feedSwipeFallback(float x, float y) {
-        if (swipeConsumed || !swipeTracking) return;
+    private boolean feedSwipeFallback(float x, float y) {
+        if (swipeConsumed || !swipeTracking) return false;
         float dx = x - swipeStartX;
         float dy = y - swipeStartY;
         float threshold = Math.abs(dx) > Math.abs(dy) ? 12f : 20f;
@@ -2257,7 +2279,9 @@ public final class GameView extends View {
             Direction d = directionFor(dx, dy);
             if (screen == Screen.REMOTE) remoteInput(d);
             else registerInput(d);
+            return true;
         }
+        return false;
     }
 
     private Direction arrowAt(float x, float y) {
@@ -2298,12 +2322,32 @@ public final class GameView extends View {
             resumeGame();
             return true;
         }
+        if ((screen == Screen.PLAYING || screen == Screen.REMOTE) && swipeMode) {
+            // Some Wear OS versions consume a horizontal swipe as Back before the
+            // touch stream reaches the app. Use the canceled gesture as a fallback
+            // direction so a right swipe still becomes RIGHT.
+            if (systemSwipeCanceled) {
+                systemSwipeCanceled = false;
+                Direction d = backGestureDirection();
+                if (screen == Screen.REMOTE) remoteInput(d);
+                else registerInput(d);
+            }
+            return true;
+        }
         if (screen == Screen.PLAYING || screen == Screen.COUNTDOWN
                 || screen == Screen.REMOTE || screen == Screen.KEYBOARD_PAIR) {
             // Return gestures are intentionally ignored during a run; use the pause button.
             return true;
         }
         return true;
+    }
+
+    private Direction backGestureDirection() {
+        float adx = Math.abs(systemCancelDx);
+        float ady = Math.abs(systemCancelDy);
+        if (adx < 8f && ady < 8f) return Direction.RIGHT;
+        if (adx >= ady) return systemCancelDx >= 0f ? Direction.RIGHT : Direction.LEFT;
+        return systemCancelDy >= 0f ? Direction.DOWN : Direction.UP;
     }
 
     void onHostResume() {

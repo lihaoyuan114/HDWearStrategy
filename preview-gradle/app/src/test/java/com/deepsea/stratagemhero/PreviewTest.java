@@ -162,6 +162,26 @@ public class PreviewTest {
         save(view, "17_remote_menu.png");
     }
     @Test
+    public void backCancelFallbackFeedsRightSwipe() throws Exception {
+        context.getSharedPreferences("stratagem_hero", Context.MODE_PRIVATE)
+                .edit().clear().commit();
+        GameView v = makeView();
+        tap(v, 199f, 322f);
+        tap(v, 270f, 322f);
+        tap(v, 225f, 392f);
+        long now = SystemClock.uptimeMillis();
+        MotionEvent down = MotionEvent.obtain(now, now, MotionEvent.ACTION_DOWN, 200f, 225f, 0);
+        v.dispatchTouchEvent(down);
+        down.recycle();
+        MotionEvent cancel = MotionEvent.obtain(now, now + 30,
+                MotionEvent.ACTION_CANCEL, 205f, 225f, 0);
+        v.dispatchTouchEvent(cancel);
+        cancel.recycle();
+        v.handleBack();
+        GameSession session = (GameSession) field(v, "session");
+        assertEquals("R", session.getInputCode());
+    }
+    @Test
     public void renderEnglishUI() throws Exception {
         GameView v = makeView();
         L10n.en = true;
