@@ -43,6 +43,16 @@ Server ZIP SHA-256 07a62628dc075571bfa6de7e52dd992100ed8acb52a613971650eea4a3612
 - **中文 / English 独立版本**：不同包名，可同时安装。
 - **游戏原声**：输入、确认、失败、开始、组完成/失败、Stratagem Hero BGM，以及分类 Mission Control 语音。
 
+## 兼容性
+
+| 设备 | 系统 | 状态 |
+|---|---|---|
+| Samsung Galaxy Watch4 | Wear OS 5 / Android 14 | ✅ 实机验证 |
+| 其他 Wear OS 3+ | Android 11+ | ✅ 支持（右滑兜底见 1.6.1） |
+| Huawei Watch 3 / 3 Pro | HarmonyOS 2/3 | ❌ 本 APK 无法安装/运行 |
+
+华为 Watch 3 是 HarmonyOS 穿戴设备，不是 Wear OS，不能直接安装 Android APK。它的右滑退出需要在 **HarmonyOS HAP** 里关闭，例如页面配置 `swipeBackEnabled: false`，或调用 `app.setSwipeToDismiss()` / `setSwipeToBackEnabled(false)`；Android 的 `setSystemGestureExclusionRects` 对 HarmonyOS 无效。需要完整 HAP 移植，不能靠给 APK 加一行解决。
+
 ---
 
 ## 界面

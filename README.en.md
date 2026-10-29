@@ -43,6 +43,16 @@ Server ZIP  SHA-256 07a62628dc075571bfa6de7e52dd992100ed8acb52a613971650eea4a361
 - **Chinese / English builds**: separate packages, installable together.
 - **Original game audio**: input/confirm/error cues, Stratagem Hero round cues and BGM, beacon and category-grouped Mission Control voice lines.
 
+## Compatibility
+
+| Device | OS | Status |
+|---|---|---|
+| Samsung Galaxy Watch4 | Wear OS 5 / Android 14 | ✅ Tested on device |
+| Other Wear OS 3+ | Android 11+ | ✅ Supported (1.6.1 back-swipe fallback) |
+| Huawei Watch 3 / 3 Pro | HarmonyOS 2/3 | ❌ This APK cannot install/run |
+
+Huawei Watch 3 is a HarmonyOS wearable, not Wear OS, so it cannot install an Android APK. Its right-swipe exit must be disabled in a **HarmonyOS HAP**, e.g. route config `swipeBackEnabled: false`, or `app.setSwipeToDismiss()` / `setSwipeToBackEnabled(false)`. Android's `setSystemGestureExclusionRects` has no effect on HarmonyOS. A full HAP port is required; an APK patch cannot fix it.
+
 ---
 
 ## Screenshots
